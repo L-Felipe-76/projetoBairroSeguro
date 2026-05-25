@@ -29,7 +29,7 @@
         
         <div id="enviarLinkDiv">
             @csrf
-            <button type="submit" id="btnEnviarLink">Enviar Link</button>
+            <button type="submit" class="btnSubmit">Enviar Link</button>
         </div>
     </form>
 

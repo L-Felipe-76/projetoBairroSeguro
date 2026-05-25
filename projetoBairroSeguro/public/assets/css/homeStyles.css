@@ -1,0 +1,139 @@
+html{
+    height: 100%;
+}
+body{
+    background-color: darkcyan;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    height: 100%;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    color: white;
+}
+
+
+
+
+
+/*Ocorrências*/
+
+.bodyOcorrencias{
+    background-color: transparent;
+    margin: 0px;
+    padding: 5px;
+    border-radius: 0px;
+}
+
+    /*Head*/
+.navBar{
+    display: flex;
+    justify-content: space-between; /*Isso aqui é para deixar um espaço no meio do eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    width: 100%;
+    background-color: gray;
+    margin: 0px;
+    border-bottom: solid;
+    border-color: rgba(172, 172, 172, 0.534);
+}
+#menuBtn{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    height: 35px;
+    width: 35px;
+    margin: 5px;
+}
+#barraDePesquisa{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 30px;
+    width: 300px;
+}
+.profileBtnDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /*Isso aqui altera o eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    height: 60px;
+    width: 60px;
+    background-color: orange;
+    border-color: whitesmoke;
+    border-width: 1px;
+    border-radius: 50px;
+    margin: 5px;
+}
+#profileOcorrenciasImg{
+    height: 40px;
+    width: 40px;
+}
+.menuTemp{
+    display: flex;
+    justify-content: flex-start; /*Isso aqui é para deixar um espaço no meio do eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    width: 100%;
+    background-color: gray;
+    margin: 0px;
+    gap: 20px;
+    
+}
+#MenuLink{
+    padding: 5px;
+    border-left: solid;
+    border-right: solid;
+    border-width: 1px;
+    border-color: rgba(172, 172, 172, 0.534);
+    color: white;
+    font-weight: bold;
+}
+
+    /*Body*/
+.article{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 5px;
+    border-width: 2px;
+    margin: 10px;
+    width: 500px;
+    height: 210px;
+}
+#h2OcorrenciaHomepage{
+    height: 20px;
+    margin: 5px;
+    margin-top: 10px;
+}
+#pOcorrenciaHomepage{
+    height: 100px;
+    margin: 5px;
+}
+#pOcorrenciaData{
+    height: 20px;
+    margin: 5px;
+}
+#tagCriminal{
+    height: 20px;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+#tagInfraestrutura{
+    height: 20px;
+    margin: 5px;
+    margin-bottom: 10px;
+}
+
+/*Perfil*/
+
+#fileProfilePicture{
+    height: 26px;
+}
