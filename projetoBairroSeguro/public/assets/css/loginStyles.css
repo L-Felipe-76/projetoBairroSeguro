@@ -1,0 +1,483 @@
+html{
+    height: 100%;
+}
+body{
+    background-color: darkcyan;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    height: 100%;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    color: white;
+}
+
+
+
+
+
+/*Login*/
+
+    /*Head*/
+#divHeader {
+    display: flex;
+    justify-content: flex-end; /*Isso aqui joga os coisas para direita*/
+    align-items: center; /*Isso aqui centraliza os coisas no eixo y*/
+    gap: 25px;
+    padding: 5px;
+    background-color: rgb(0, 95, 95);
+}
+#BtnCadastrarA{
+    border: solid;
+    border-right-width: 3px;
+    border-left-width: 3px;
+    border-top: none;
+    border-bottom: none;
+    border-color: rgb(0, 85, 85);
+    height: 64px;
+    width: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    text-decoration: none;
+}
+.divLogo{
+    display: flex;
+    justify-content: center; /*Isso aqui altera o eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    height: 64px;
+    width: 64px;
+    background-color: orange;
+    border-color: whitesmoke;
+    border-width: 1px;
+    border-radius: 50px;
+}
+.logoText{
+    color: white;
+}
+    /*Body*/
+#mainSectionLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+#emailDiv{
+    display: flex;
+    justify-content: center; /*Isso aqui altera o eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    margin: 5px;
+}
+.columEmail{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.emailLabel{
+    color: white;
+}
+#campo-email{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 28px;
+}
+#senhaDiv{
+    display: flex;
+    justify-content: center; /*Isso aqui altera o eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    margin: 5px;
+}
+#columSenha{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+#senhaLabel{
+    color: white;
+}
+#campo-senha{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 28px;
+}
+.erroDiv{
+    display: flex;
+    justify-content: center; /*Isso aqui altera o eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+}
+.mensagemErro{
+    color: darkorange;
+    border: 1px;
+    font-size: medium;
+    font-weight: bold;
+}
+#mensagemSucesso{
+    color: greenyellow;
+    border: 1px;
+    font-size: medium;
+    font-weight: bold;
+}
+#submitDiv{
+    display: flex;
+    justify-content: center; /*Isso aqui altera o eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    margin: 10px;
+}
+.btnSubmit{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    height: 32px;
+    width: 100px;
+}
+#esqueciMinhaSenhaRedirect{
+    display: flex;
+    justify-content: center; /*Isso aqui altera o eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    margin: 10px;
+    color: white;
+}
+
+
+
+
+
+/*Esqueci a senha*/
+
+    /*Head*/
+#divHeaderEsqueciASenha{
+    display: flex;
+    justify-content: space-between; /*Isso aqui é para deixar um espaço no meio do eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    height: 64px;
+    padding: 5px;
+    background-color: rgb(0, 95, 95);
+}
+#h1Head{
+    color: white;
+    margin: 0;
+}
+    /*Body*/
+#mainSectionEsqueciASenha{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+#textoDeDireção{
+    display: flex;
+    justify-content: left; /*Isso aqui altera o eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: white;
+    font-size: large;
+}
+#emailEsqueciASenhaDiv{
+    display: flex;
+    justify-content: left; /*Isso aqui altera o eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    margin: 10px;
+}
+#campo-email-esqueciASenha{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 25px;
+    width: 400px;
+}
+#erroDivEsqueciASenha{
+    display: flex;
+    justify-content: left; /*Isso aqui altera o eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+}
+#enviarLinkDiv{
+    display: flex;
+    justify-content: center; /*Isso aqui altera o eixo x*/
+    margin-top: 300px;
+}
+#btnEnviarLink{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    height: 32px;
+    width: 100px;
+}
+
+
+
+
+
+/*Cadastrar*/
+
+    /*Head*/
+.divH1HeaderCadastrar{
+    display: flex;
+    justify-content: space-between; /*Isso aqui é para deixar um espaço no meio do eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    width: 100%;
+}
+    /*Body*/
+.linha{
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.controlCampo1{
+    display: flex;
+    flex-direction: column;
+    flex: 0.5;
+}
+.controlCampo1:first-child{
+    flex: 1.5;
+}
+#campo-nomeCompleto{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+#campo-genero{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: gray;
+    padding: 2px;
+    min-height: 20px;
+}
+#campo-dataNasc{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    min-height: 20px;
+    padding: 1px;
+}
+.controlCampo2{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+#campo-emailCadastro{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+#campo-senhaCadastro{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+#campo-confirmarSenhaCadastro{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+.controlCampo3{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    flex: 1;
+}
+.controlCampo3:last-child{
+    margin-right: 40px;
+    margin-left: 20px;
+}
+#campo-telefone{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+#campo-qtMorador{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+#addMorador{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    height: 32px;
+}
+.controlCampo4{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.controlCampo4:last-child{
+    margin-right: 400px;
+}
+#campo-cep{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+#campo-estado{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+#campo-cidade{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+.controlCampo5{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+#campo-bairro{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+#campo-rua{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+#campo-numeroDaCasa{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+.controlCampo6{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+#campo-referencia{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+.butonsCadastroDiv{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px;
+    margin-top: 25px;
+}
+#finalizarCadastro{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    height: 32px;
+}
+#cancelarCadastro{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    height: 32px;
+}
+
+
+
+
+
+/*Adicionar Morador*/
+
+    /*Head*/
+.divH1HeaderAdicionarMorador{
+    display: flex;
+    justify-content: space-between; /*Isso aqui é para deixar um espaço no meio do eixo x*/
+    align-items: center; /*Isso aqui altera o eixo y*/
+    width: 100%;
+}
+
+    /*Body*/
+.primeiraLinhaMorador{
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.segundaLinhaMorador{
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#campo-telefoneMorador{
+    display: flex;
+    justify-content: start;
+    align-self: self-start;
+    flex: 0.25;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+.butonsMoradorDiv{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px;
+    margin-top: 320px;
+}
+#finalizarCadastroMorador{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    height: 32px;
+}
+#cancelarCadastro{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    height: 32px;
+}
