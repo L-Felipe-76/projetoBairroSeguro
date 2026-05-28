@@ -8,6 +8,9 @@ body{
     flex-direction: column;
     height: 100%;
 }
+h1{
+    color: white;
+}
 .footer{
     display: flex;
     justify-content: center;
@@ -21,42 +24,46 @@ body{
 
 /*Ocorrências*/
 
-.bodyOcorrencias{
-    background-color: transparent;
-    margin: 0px;
-    padding: 5px;
-    border-radius: 0px;
-}
-
     /*Head*/
-.navBar{
+#navBar{
     display: flex;
     justify-content: space-between; /*Isso aqui é para deixar um espaço no meio do eixo x*/
     align-items: center; /*Isso aqui altera o eixo y*/
     width: 100%;
-    background-color: gray;
     margin: 0px;
     border-bottom: solid;
-    border-color: rgba(172, 172, 172, 0.534);
+    background-color: rgb(0, 95, 95);
+    border-color: rgb(0, 85, 85);
 }
 #menuBtn{
-    background-color: black;
+    border: solid;
+    border-right-width: 3px;
+    border-left-width: 3px;
+    border-top: none;
+    border-bottom: none;
+    border-color: rgb(0, 85, 85);
+    height: 64px;
+    width: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: white;
-    border-radius: 5px;
-    border-color: whitesmoke;
-    height: 35px;
-    width: 35px;
-    margin: 5px;
+    font-size: medium;
+    font-weight: bold;
+    text-decoration: none;
 }
 #barraDePesquisa{
     background-color: white;
     color: black;
     border-radius: 5px;
+    border-width: 2px;
     border-color: gray;
-    height: 30px;
+    padding: 3px;
+    min-height: 20px;
     width: 300px;
 }
-.profileBtnDiv{
+#profileBtnDiv{
     display: flex;
     flex-direction: row;
     justify-content: center; /*Isso aqui altera o eixo x*/
@@ -73,12 +80,12 @@ body{
     height: 40px;
     width: 40px;
 }
-.menuTemp{
+#menuTemp{
     display: flex;
     justify-content: flex-start; /*Isso aqui é para deixar um espaço no meio do eixo x*/
     align-items: center; /*Isso aqui altera o eixo y*/
     width: 100%;
-    background-color: gray;
+    background-color: rgb(0, 95, 95);
     margin: 0px;
     gap: 20px;
     
@@ -87,13 +94,19 @@ body{
     padding: 5px;
     border-left: solid;
     border-right: solid;
-    border-width: 1px;
-    border-color: rgba(172, 172, 172, 0.534);
+    border-width: 3px;
+    border-color: rgb(0, 85, 85);
     color: white;
     font-weight: bold;
 }
 
     /*Body*/
+#mainSectionOcorrencias{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
 .article{
     background-color: white;
     display: flex;
@@ -107,33 +120,230 @@ body{
     margin: 10px;
     width: 500px;
     height: 210px;
+    gap: 10px;
+    padding-left: 2px;
 }
-#h2OcorrenciaHomepage{
+.h2OcorrenciaHomepage{
     height: 20px;
-    margin: 5px;
-    margin-top: 10px;
+    margin: 2px;
 }
-#pOcorrenciaHomepage{
+.pOcorrenciaHomepage{
     height: 100px;
-    margin: 5px;
+    margin: 2px;
 }
-#pOcorrenciaData{
+.pOcorrenciaData{
     height: 20px;
-    margin: 5px;
+    margin: 2px;
 }
 #tagCriminal{
     height: 20px;
-    margin: 5px;
-    margin-bottom: 10px;
+    margin: 2px;
+    background-color: rgba(255, 0, 0, 0.400);
+    width: fit-content;
 }
 #tagInfraestrutura{
     height: 20px;
-    margin: 5px;
-    margin-bottom: 10px;
+    margin: 2px;
+    background-color: rgba(0, 128, 0, 0.400);
+    width: fit-content;
 }
+
+
+
+
 
 /*Perfil*/
 
-#fileProfilePicture{
-    height: 26px;
+#mainSectionCadastrar{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.linha{
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.controlCampo{
+    display: flex;
+    flex-direction: column;
+}
+#campoLabel /*É uma classe multipla*/{
+    color: white;
+}
+#campo-nomeCompleto{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 500px;
+}
+#campo-genero{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: gray;
+    padding: 2px;
+    min-height: 20px;
+    width: 250px;
+}
+#campo-dataNasc{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    min-height: 20px;
+    padding: 1px;
+    width: 250px;
+}
+#campo-emailCadastro{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 400px;
+}
+#campo-senhaCadastro{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 400px;
+}
+#campo-confirmarSenhaCadastro{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 400px;
+}
+#campo-telefone{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 150px;
+}
+#campo-qtMorador{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 150px;
+}
+#addMorador{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    height: 32px;
+}
+#h1Cad{
+    color: white;
+    margin: 5px;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+#campo-cep{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 150px;
+}
+#campo-estado{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 150px;
+}
+#campo-cidade{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 300px;
+}
+#campo-bairro{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 350px;
+}
+#campo-rua{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 350px;
+}
+#campo-numeroDaCasa{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+    width: 150px;
+}
+#campo-referencia{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border-color: gray;
+    height: 20px;
+}
+#butonsCadastroDiv{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px;
+    margin-top: 25px;
+}
+#finalizarCadastro{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    height: 32px;
+}
+#cancelarCadastro{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    height: 32px;
+}
+
+
+
+
+
+/*Em Breve*/
+#mainSectionComingSoon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+#comingSoonH1{
+display: flex;
+flex-direction: column;
+align-items: center;
 }
