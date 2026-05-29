@@ -20,9 +20,9 @@
                     <label for="campo-genero" id="campoLabel">Gênero</label>
                     <select name="genero" id="campo-genero" required>
                         <option >Selecione</option>
-                        <option {{ $perfil['genero'] == 'Masculino' ? 'selected' : '' }}>Masculino</option>
-                        <option {{ $perfil['genero'] == 'Feminino' ? 'selected' : '' }}>Feminino</option>
-                        <option {{ $perfil['genero'] == 'Prefiro não informar' ? 'selected' : '' }}>Prefiro não informar</option>
+                        <option {{ $usuario['genero'] == 'Masculino' ? 'selected' : '' }}>Masculino</option>
+                        <option {{ $usuario['genero'] == 'Feminino' ? 'selected' : '' }}>Feminino</option>
+                        <option {{ $usuario['genero'] == 'Prefiro não informar' ? 'selected' : '' }}>Prefiro não informar</option>
                     </select>
                 </div>
 

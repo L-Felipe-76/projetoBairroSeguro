@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Users;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -31,7 +31,7 @@ class HomeController extends Controller
             'dataNasc' => 'required',
             'email' => 'required|email',
             'password' => 'required|min:8',
-            'confirmarSenha' => 'required|min:8|same:senha',
+            'confirmarSenha' => 'required|min:8|same:password',
             'telefone' => 'required|max:15',
             'qtMorador' => 'required',
             'cep' => 'required|max:9',
@@ -49,12 +49,16 @@ class HomeController extends Controller
             $request->file('fileProfilePicture')->storeAs('/userProfile', 'user_1.jpg', 'public');
         }
 
+        $usuario = Auth::user();
+
+        User::where('id', $usuario->id)->update($request->except('confirmarSenha', 'fileProfilePicture', '_token'));
+
         return redirect()->route('perfilRoute');
     }
 
     public function cancelarEdicaoPerfil(){
         return redirect()->route('perfilRoute');
-        }
+    }
 
     public function excluirPerfil(){
         $usuario = Auth::user();
