@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Users;
+use App\Models\Morador;
 
 class LoginContrller extends Controller
 {
@@ -34,8 +36,8 @@ class LoginContrller extends Controller
             'genero' => 'required',
             'dataNasc' => 'required',
             'email' => 'required|email',
-            'senha' => 'required|min:8',
-            'confirmarSenha' => 'required|min:8|same:senha',
+            'password' => 'required|min:8',
+            'confirmarSenha' => 'required|min:8|same:password',
             'telefone' => 'required|max:15',
             'qtMorador' => 'required',
             'cep' => 'required|max:9',
@@ -46,15 +48,24 @@ class LoginContrller extends Controller
             'numeroDaCasa' => 'required|max:5',
             'referencias' => 'max:2000'
         ]);
-
-        $request->session()->only([
-            'nomeCompletoMorador',
-            'generoMorador',
-            'dataNascMorador',
-            'telefoneMorador']
-        );
         
-        $dados['cadastro'] = $request->all();
+        $usuario = User::create($request->except('confirmarSenha'));
+
+        Morador::create([
+
+            'nomeCompletoMorador' => $request->session()->get('nomeCompletoMorador'),
+            'generoMorador' => $request->session()->get('generoMorador'),
+            'dataNascMorador' => $request->session()->get('dataNascMorador'),
+            'telefoneMorador' => $request->session()->get('telefoneMorador'),
+            'users_id' => $usuario->id
+        ]);
+
+        $request->session()->forget([
+        'nomeCompletoMorador', 
+        'generoMorador', 
+        'dataNascMorador', 
+        'telefoneMorador'
+    ]);
 
         return redirect()->route('loginRoute');
     }
@@ -93,7 +104,6 @@ class LoginContrller extends Controller
     //---------------------
 
     public function login(Request $request){
-        $request->session()->flush();
         return view('login');
     }
 
