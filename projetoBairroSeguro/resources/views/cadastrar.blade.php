@@ -40,7 +40,7 @@
             
             <div class="controlCampo">
                 <label for="campo-senhaCadastro" id="campoLabel">Senha</label>
-                <input type="password" name="senha" id="campo-senhaCadastro" required minlength="8" placeholder="********">
+                <input type="password" name="password" id="campo-senhaCadastro" required minlength="8" placeholder="********">
             </div>
 
             <div class="controlCampo">

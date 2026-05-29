@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\LoginContrller;
 use App\Http\Controllers\HomeController;
 
@@ -24,16 +25,18 @@ Route::controller(LoginContrller::class)
         Route::get('/LogOut', 'logout')->name('logoutRoute');
     });
 
-Route::controller(HomeController::class)
-    ->prefix('/BairroSeguro')
-    ->group(function() {
-        Route::get('/Home', 'ocorrencias')->name('ocorrenciasRoute'); //Perguntar sobre erro no direcionamento dos dados para essa rota atraves do controler = Fazer com dados mockados estaticos
+Route::middleware('auth')->group(function(){
+    Route::controller(HomeController::class)
+        ->prefix('/BairroSeguro')
+        ->group(function() {
+            Route::get('/Home', 'ocorrencias')->name('ocorrenciasRoute'); //Perguntar sobre erro no direcionamento dos dados para essa rota atraves do controler = Fazer com dados mockados estaticos
 
-        Route::get('/Perfil', 'perfil')->name('perfilRoute');
-        Route::get('/EditarPerfil', 'editarPerfil')->name('editarPerfilRoute');
-        Route::post('/SalvarPerfil', 'salvarPerfil')->name('salvarPerfilRoute');
-        Route::get('/cancelarEdicaoPerfil', 'cancelarEdicaoPerfil')->name('cancelarEdicaoPerfilRoute');
-        Route::get('/ExcluirPerfil', 'excluirPerfil')->name('excluirPerfilRoute');
+            Route::get('/Perfil', 'perfil')->name('perfilRoute');
+            Route::get('/EditarPerfil', 'editarPerfil')->name('editarPerfilRoute');
+            Route::post('/SalvarPerfil', 'salvarPerfil')->name('salvarPerfilRoute');
+            Route::get('/cancelarEdicaoPerfil', 'cancelarEdicaoPerfil')->name('cancelarEdicaoPerfilRoute');
+            Route::get('/ExcluirPerfil', 'excluirPerfil')->name('excluirPerfilRoute');
 
-        Route::get('/ComingSoon', 'emBreve')->name('comingSoonRoute');
-    });
+            Route::get('/ComingSoon', 'emBreve')->name('comingSoonRoute');
+        });
+});
