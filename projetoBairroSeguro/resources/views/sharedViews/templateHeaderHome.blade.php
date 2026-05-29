@@ -10,24 +10,24 @@
 <body>
 
     <header>
-        <nav class="navBar">
+        <nav id="navBar">
 
-            <div class="menuBtnDiv">
-                <button id="menuBtn">☰</button>
+            <div>
+                <a id="menuBtn">☰</a>
             </div>
             
-            <div class="searchBarDiv">
+            <div>
                 <input type="search" name="searchBar" id="barraDePesquisa" placeholder="Pesquisar CEP de bairro...">
             </div>
 
-            <div class="profileBtnDiv">
+            <div id="profileBtnDiv">
                 <a href="{{route('perfilRoute')}}">
                     <img src="{{asset('assets/imgs/user.png') }}" id="profileOcorrenciasImg">
                 </a>
                 
             </div>
         </nav>
-        <nav class="menuTemp">
+        <nav id="menuTemp">
             <a href="{{route('ocorrenciasRoute')}}" id="MenuLink">Home</a>
             <a href="{{route('comingSoonRoute')}}" id="MenuLink">Relatar ocorrência</a>
             <a href="{{route('comingSoonRoute')}}" id="MenuLink">Minhas ocorrência</a>
@@ -37,7 +37,7 @@
         </nav>
     </header>
 
-    <div>
+    <div id="@yield('classe')">
         @yield('conteudoPrincipal')
     </div>
 

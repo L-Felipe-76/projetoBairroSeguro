@@ -194,7 +194,7 @@ class LoginContrller extends Controller
     }
 
     public function emBreve(){
-        return redirect()->route('comingSoonRoute');
+        return view('comingSoon');
     }
 
 }
