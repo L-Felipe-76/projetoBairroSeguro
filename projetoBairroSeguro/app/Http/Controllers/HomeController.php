@@ -13,31 +13,15 @@ class HomeController extends Controller
     }
 
     public function perfil(Request $request){
-        $usuario = Auth::user();
+        $usuario = Auth::user();    
 
         return view('perfil', compact('usuario'));
     }
 
     public function editarPerfil(){
-        $dados['perfil'] = [
-            'nomeCompleto' => 'Administrador',
-            'genero' => 'Prefiro não informar',
-            'dataNasc' => '2001-02-03',
-            'email' => 'admin@admin.email.com',
-            'password' => 'admin123',
-            'confirmarSenha' => 'admin123',
-            'telefone' => '82 99999-9999',
-            'qtMorador' => 2,
-            'cep' => '12345-678',
-            'estado' => 'Alagoas',
-            'cidade' => 'Macéio',
-            'bairro' => 'Farol',
-            'rua' => 'Rua a Harmonia',
-            'numeroDaCasa' => '22',
-            'referencias' => 'Casa ao lado dos predios do cesmac'
-        ];
+        $usuario = Auth::user();
 
-        return view('editarPerfil', $dados);
+        return view('editarPerfil', compact('usuario'));
     }
 
     public function salvarPerfil(Request $request){
@@ -70,9 +54,15 @@ class HomeController extends Controller
 
     public function cancelarEdicaoPerfil(){
         return redirect()->route('perfilRoute');
-    }
+        }
 
     public function excluirPerfil(){
+        $usuario = Auth::user();
+        $delete = User::find($usuario->id);
+        $delete->delete();
+
+        Auth::logout();
+                
         return redirect()->route('loginRoute');
     }
 

@@ -13,7 +13,7 @@
             <div class="linha">
                 <div class="controlCampo">
                     <label for="campo-nomeCompleto" id="campoLabel">Nome Completo</label>
-                    <input type="text" name="nomeCompleto" id="campo-nomeCompleto" required maxlength="250" minlength="7" value="{{$perfil['nomeCompleto']}}">
+                    <input type="text" name="nomeCompleto" id="campo-nomeCompleto" required maxlength="250" minlength="7" value="{{$usuario['nomeCompleto']}}">
                 </div>
 
                 <div class="controlCampo">
@@ -28,14 +28,14 @@
 
                 <div class="controlCampo">
                     <label for="campo-dataNasc" id="campoLabel">Data Nascimento</label>
-                    <input type="date" name="dataNasc" id="campo-dataNasc" required value="{{$perfil['dataNasc']}}">
+                    <input type="date" name="dataNasc" id="campo-dataNasc" required value="{{$usuario['dataNasc']}}">
                 </div>
             </div>
 
             <div class="linha">
                 <div class="controlCampo">
                     <label for="campo-emailCadastro" id="campoLabel">Email</label>
-                    <input type="email" name="email" id="campo-emailCadastro" required placeholder="seu@email.com" value="{{$perfil['email']}}">
+                    <input type="email" name="email" id="campo-emailCadastro" required placeholder="seu@email.com" value="{{$usuario['email']}}">
                 </div>
                 
                 <div class="controlCampo">
@@ -52,12 +52,12 @@
             <div class="linha">
                 <div class="controlCampo">
                     <label for="campo-telefone" id="campoLabel">Telefone</label>
-                    <input type="tel" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" name="telefone" id="campo-telefone" required placeholder="(xx) xxxxx-xxxx" value="{{$perfil['telefone']}}">
+                    <input type="tel" pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" name="telefone" id="campo-telefone" required placeholder="(xx) xxxxx-xxxx" value="{{$usuario['telefone']}}">
                 </div>
 
                 <div class="controlCampo">
                     <label for="campo-qtMorador" id="campoLabel">Quantidade de moradores</label>
-                    <input type="number" name="qtMorador" id="campo-qtMorador" required value="{{$perfil['qtMorador']}}">
+                    <input type="number" name="qtMorador" id="campo-qtMorador" required value="{{$usuario['qtMorador']}}">
                 </div>
 
                 <div class="controlCampo">
@@ -69,45 +69,45 @@
             <div class="linha">
                 <div class="controlCampo">
                     <label for="campo-cep" id="campoLabel">CEP</label>
-                    <input type="text" name="cep" id="campo-cep" placeholder="12345-678" required value="{{$perfil['cep']}}">
+                    <input type="text" name="cep" id="campo-cep" placeholder="12345-678" required value="{{$usuario['cep']}}">
                 </div>
 
                 <div class="controlCampo">
                     <label for="campo-estado" id="campoLabel">Estado</label>
-                    <input type="text" name="estado" id="campo-estado" required value="{{$perfil['estado']}}">
+                    <input type="text" name="estado" id="campo-estado" required value="{{$usuario['estado']}}">
                 </div>
             </div>
 
             <div class="linha">
                 <div class="controlCampo">
                     <label for="campo-cidade" id="campoLabel">Cidade</label>
-                    <input type="text" name="cidade" id="campo-cidade" required value="{{$perfil['cidade']}}">
+                    <input type="text" name="cidade" id="campo-cidade" required value="{{$usuario['cidade']}}">
                 </div>
             </div>
 
             <div class="linha">
                 <div class="controlCampo">
                     <label for="campo-bairro" id="campoLabel">Bairro</label>
-                    <input type="text" name="bairro" id="campo-bairro" required value="{{$perfil['bairro']}}">
+                    <input type="text" name="bairro" id="campo-bairro" required value="{{$usuario['bairro']}}">
                 </div>
             </div>
 
             <div class="linha">
                 <div class="controlCampo">
                     <label for="campo-rua" id="campoLabel">Rua</label>
-                    <input type="text" name="rua" id="campo-rua" required value="{{$perfil['rua']}}">
+                    <input type="text" name="rua" id="campo-rua" required value="{{$usuario['rua']}}">
                 </div>
 
                 <div class="controlCampo">
                     <label for="campo-numeroDaCasa" id="campoLabel">Número da casa</label>
-                    <input type="text" name="numeroDaCasa" id="campo-numeroDaCasa" value="{{$perfil['numeroDaCasa']}}">
+                    <input type="text" name="numeroDaCasa" id="campo-numeroDaCasa" value="{{$usuario['numeroDaCasa']}}">
                 </div>
             </div>
 
             <div class="linha">
                 <div class="controlCampo">
                     <label for="campo-referencias" id="campoLabel">Referências sobre a rua</label>
-                    <textarea cols="100" rows="10" name="referencias" id="campo-referencias">{{$perfil['referencias']}}</textarea>
+                    <textarea cols="100" rows="10" name="referencias" id="campo-referencias">{{$usuario['referencias']}}</textarea>
                 </div>
             </div>
 
