@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginContrller;
+use App\Http\Controllers\HomeController;
 
 
 Route::controller(LoginContrller::class)
@@ -21,7 +22,11 @@ Route::controller(LoginContrller::class)
         Route::get('/Index', 'login')->name('loginRoute');
         Route::post('/Logar', 'logar')->name('logarRoute');
         Route::get('/LogOut', 'logout')->name('logoutRoute');
+    });
 
+Route::controller(HomeController::class)
+    ->prefix('/BairroSeguro')
+    ->group(function() {
         Route::get('/Home', 'ocorrencias')->name('ocorrenciasRoute'); //Perguntar sobre erro no direcionamento dos dados para essa rota atraves do controler = Fazer com dados mockados estaticos
 
         Route::get('/Perfil', 'perfil')->name('perfilRoute');
