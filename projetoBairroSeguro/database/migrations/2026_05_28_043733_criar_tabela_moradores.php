@@ -15,8 +15,9 @@ return new class extends Migration
         $table->string('generoMorador');
         $table->date('dataNascMorador');
         $table->string('telefoneMorador', 15);
-        $table->bigInteger('user_id');
         $table->timestamps();
+        $table->unsignedBigInteger('users_id');
+        $table->foreign('users_id')->references('id')->on('users');
     });
 }
 

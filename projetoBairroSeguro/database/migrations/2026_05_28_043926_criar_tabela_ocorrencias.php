@@ -18,8 +18,10 @@ return new class extends Migration
             $table->string('rua')->nullable();
             $table->dateTime('dataOcorrencia');
             $table->string('imagem')->nullable();
-            $table->bigInteger('user_id');
+            $table->unsignedBigInteger('users_id');
             $table->timestamps();
+            $table->foreign('users_id')->references('id')->on('users');
+            
         });
     }
 
