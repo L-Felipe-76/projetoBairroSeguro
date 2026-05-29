@@ -46,9 +46,15 @@ class LoginContrller extends Controller
             'numeroDaCasa' => 'required|max:5',
             'referencias' => 'max:2000'
         ]);
+
+        $request->session()->only([
+            'nomeCompletoMorador',
+            'generoMorador',
+            'dataNascMorador',
+            'telefoneMorador']
+        );
         
-        $dados['cadastro'] = $request->all();        
-        //Como retornar esses dados tanto para o login quanto para a ocorrencia? Mesmo erro da rota de ocorrencia metodo post.
+        $dados['cadastro'] = $request->all();
 
         return redirect()->route('loginRoute');
     }
@@ -69,13 +75,15 @@ class LoginContrller extends Controller
             'telefoneMorador' => 'required|max:13'
         ]);
     
-        $dados['cadastroMorador'] = [
-            ['nomeCompletoMorador' => $request->nomeCompletoMorador, 'generoMorador' => $request->generoMorador, 'dataNascMorador'=> $request->dataNascMorador, 'telefoneMorador' => $request->telefoneMorador]
-        ];
+        $request->session()->put([
+            'nomeCompletoMorador' => $request->nomeCompletoMorador,
+            'generoMorador' => $request->generoMorador,
+            'dataNascMorador'=> $request->dataNascMorador,
+            'telefoneMorador' => $request->telefoneMorador]
+        );
 
         return redirect()->route('cadastrarRoute');
 
-        //como enviar esses dados diretamente para a rota do perfil? é possivel? Mesmo erro da rota de ocorrencia metodo post. = Não envia ainda, usa var estatica mesmo
     }
 
     public function cancelarMorador(){
@@ -84,7 +92,8 @@ class LoginContrller extends Controller
 
     //---------------------
 
-    public function login(){
+    public function login(Request $request){
+        $request->session()->flush();
         return view('login');
     }
 
@@ -105,96 +114,6 @@ class LoginContrller extends Controller
 
     public function logout(){
         return redirect()->route('loginRoute');
-    }
-
-
-
-    public function ocorrencias(){
-        return view('ocorrencias');
-    }
-
-    public function perfil(){
-        $dados['perfil'] = [
-            'nomeCompleto' => 'Administrador',
-            'genero' => 'Prefiro não informar',
-            'dataNasc' => '2001-02-03',
-            'email' => 'admin@admin.email.com',
-            'senha' => 'admin123',
-            'confirmarSenha' => 'admin123',
-            'telefone' => '82 99999-9999',
-            'qtMorador' => 2,
-            'cep' => '12345-678',
-            'estado' => 'Alagoas',
-            'cidade' => 'Macéio',
-            'bairro' => 'Farol',
-            'rua' => 'Rua a Harmonia',
-            'numeroDaCasa' => '22',
-            'referencias' => 'Casa ao lado dos predios do cesmac'
-        ];
-
-        return view('perfil', $dados);
-    }
-
-    public function editarPerfil(){
-        $dados['perfil'] = [
-            'nomeCompleto' => 'Administrador',
-            'genero' => 'Prefiro não informar',
-            'dataNasc' => '2001-02-03',
-            'email' => 'admin@admin.email.com',
-            'senha' => 'admin123',
-            'confirmarSenha' => 'admin123',
-            'telefone' => '82 99999-9999',
-            'qtMorador' => 2,
-            'cep' => '12345-678',
-            'estado' => 'Alagoas',
-            'cidade' => 'Macéio',
-            'bairro' => 'Farol',
-            'rua' => 'Rua a Harmonia',
-            'numeroDaCasa' => '22',
-            'referencias' => 'Casa ao lado dos predios do cesmac'
-        ];
-
-        return view('editarPerfil', $dados);
-    }
-
-    public function salvarPerfil(Request $request){
-        $request->validate([
-            'nomeCompleto' => 'required|max:250|min:7',
-            'genero' => 'required',
-            'dataNasc' => 'required',
-            'email' => 'required|email',
-            'senha' => 'required|min:8',
-            'confirmarSenha' => 'required|min:8|same:senha',
-            'telefone' => 'required|max:15',
-            'qtMorador' => 'required',
-            'cep' => 'required|max:9',
-            'estado' => 'required|max:250',
-            'cidade' => 'required|max:250',
-            'bairro' => 'required|max:250',
-            'rua' => 'required|max:250',
-            'numeroDaCasa' => 'required|max:5',
-            'referencias' => 'max:2000',
-            'fileProfilePicture' => 'image'
-        ]);
-        
-        if ($request->has('fileProfilePicture')){
-            $request->file('fileProfilePicture');
-            $request->file('fileProfilePicture')->storeAs('/userProfile', 'user_1.jpg', 'public');
-        }
-
-        return redirect()->route('perfilRoute');
-    }
-
-    public function cancelarEdicaoPerfil(){
-        return redirect()->route('perfilRoute');
-    }
-
-    public function excluirPerfil(){
-        return redirect()->route('loginRoute');
-    }
-
-    public function emBreve(){
-        return view('comingSoon');
     }
 
 }
