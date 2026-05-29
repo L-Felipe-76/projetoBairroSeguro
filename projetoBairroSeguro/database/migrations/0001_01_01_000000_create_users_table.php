@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('telefone', 15);
-            $table->integer('qtdMorador');
+            $table->integer('qtMorador');
             $table->string('cep', 9);
             $table->string('estado');
             $table->string('cidade');

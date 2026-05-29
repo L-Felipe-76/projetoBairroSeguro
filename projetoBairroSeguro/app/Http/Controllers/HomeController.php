@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Users;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -12,9 +13,9 @@ class HomeController extends Controller
     }
 
     public function perfil(Request $request){
+        $usuario = Auth::user();
 
-
-        return view('perfil', $usuario);
+        return view('perfil', compact('usuario'));
     }
 
     public function editarPerfil(){
@@ -23,7 +24,7 @@ class HomeController extends Controller
             'genero' => 'Prefiro não informar',
             'dataNasc' => '2001-02-03',
             'email' => 'admin@admin.email.com',
-            'senha' => 'admin123',
+            'password' => 'admin123',
             'confirmarSenha' => 'admin123',
             'telefone' => '82 99999-9999',
             'qtMorador' => 2,
@@ -45,7 +46,7 @@ class HomeController extends Controller
             'genero' => 'required',
             'dataNasc' => 'required',
             'email' => 'required|email',
-            'senha' => 'required|min:8',
+            'password' => 'required|min:8',
             'confirmarSenha' => 'required|min:8|same:senha',
             'telefone' => 'required|max:15',
             'qtMorador' => 'required',

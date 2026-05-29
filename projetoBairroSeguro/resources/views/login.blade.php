@@ -40,7 +40,7 @@
             <div id="senhaDiv">
                 <div id="columSenha">
                     <label for="campo-senha" id="senhaLabel">Senha</label>
-                    <input type="password" name="senha" id="campo-senha" required minlength="8" placeholder="********">
+                    <input type="password" name="password" id="campo-senha" required minlength="8" placeholder="********">
                 </div>
             </div>
 

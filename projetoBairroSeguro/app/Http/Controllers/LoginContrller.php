@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Users;
+use App\Models\User;
 use App\Models\Morador;
+use Illuminate\Support\Facades\Auth;
 
 class LoginContrller extends Controller
 {
@@ -17,7 +18,9 @@ class LoginContrller extends Controller
             'email' => 'required|email'
         ]);
 
-        if ($request->email == 'admin@admin.email.com'){
+        $usuario = User::where('email', 'like', $request->email)->first();
+
+        if ($usuario){
             return redirect()->route('loginRoute')->with('sucesso', 'Link de redefinição enviado!');
         }else {
             return redirect()->back()->with('erro', 'Email incorreto!');
@@ -35,7 +38,7 @@ class LoginContrller extends Controller
             'nomeCompleto' => 'required|max:250|min:7',
             'genero' => 'required',
             'dataNasc' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
             'confirmarSenha' => 'required|min:8|same:password',
             'telefone' => 'required|max:15',
@@ -110,19 +113,19 @@ class LoginContrller extends Controller
     public function logar(Request $request){
         $request->validate([
             'email' => 'required|email',
-            'senha' => 'required|min:8'
+            'password' => 'required|min:8'
         ]);
 
 
-        if ($request->email == 'admin@admin.email.com' && $request->senha == 'admin123'){
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])){
             return redirect()->route('ocorrenciasRoute');
-            //comoo resolver o erro desse redirect?
         }else {
             return redirect()->back()->with('erro', 'Emaill ou senha incorretos!');
         }
     }
 
     public function logout(){
+        Auth::logout();
         return redirect()->route('loginRoute');
     }
 
